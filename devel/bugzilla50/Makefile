@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # FreeBSD PR 196060,196100: explicitly depend on textproc/p5-Text-Tabv
 RUN_DEPENDS=	\
 		p5-CGI>=3.51:www/p5-CGI \
+		p5-Class-XSAccessor>0:devel/p5-Class-XSAccessor \
 		p5-DBI>=1.614:databases/p5-DBI \
 		p5-DateTime-TimeZone>=1.64:devel/p5-DateTime-TimeZone \
 		p5-DateTime>=0.75:devel/p5-DateTime \
