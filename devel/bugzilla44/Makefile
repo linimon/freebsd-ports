@@ -11,6 +11,9 @@ WWW=		https://www.bugzilla.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Upstream support ended 20250103
+EXPIRATION_DATE=	20250405
+
 # see Bugzilla/Install/Requirements.pm
 # PR 194782: silence Module::Pluggable deprecated warnings
 # PR 196060,196100: explicitly depend on textproc/p5-Text-Tabv
