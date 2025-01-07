@@ -12,7 +12,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=		Upstream support ended 20250103
-EXPIRATION_DATE=	20250405
+EXPIRATION_DATE=	2025-04-05
 
 # see Bugzilla/Install/Requirements.pm
 # PR 194782: silence Module::Pluggable deprecated warnings
