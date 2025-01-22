@@ -1,9 +1,8 @@
 # note: If someone has a fix for a particular ARCH please feel free
 #       to commit it.  I (ler) don't have access to all the ARCH's
-
 PORTNAME=	lsof
 DISTVERSION=	4.99.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
@@ -16,11 +15,12 @@ LICENSE_NAME=	lsof
 LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-
 USES=		compiler cpe shebangfix
 CPE_VENDOR=	lsof_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	lsof-org
+
+BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash
 
 SHEBANG_FILES=	scripts/*.pl
 
@@ -42,8 +42,8 @@ BOOKE_CFLAGS=	-DBOOKE
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-n freebsd
 CONFIGURE_ENV=		FREEBSD_SYS="${SRC_BASE}/sys" \
-			LSOF_CC="${CC} -idirafter /usr/src" 
-BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash
+			LSOF_CC="${CC}" \
+			LSOF_OPINC="-idirafter ${SRC_BASE}/sys"
 
 # GCC needs -lzfs -lzpool for reasons unknown.  If someone can
 # figure out why, I (ler) am all ears.
@@ -57,7 +57,7 @@ IGNORE+=	requires kernel sources
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lsof ${STAGEDIR}${PREFIX}/sbin
-	(cd ${WRKSRC} && /usr/bin/soelim Lsof.8 > ${WRKSRC}/lsof.8)
+	(cd ${WRKSRC} && ${SOELIM} Lsof.8 > ${WRKSRC}/lsof.8)
 	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${STAGEDIR}${MANDIRS}/man8/lsof.8
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${DATADIR}

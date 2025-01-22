@@ -1,6 +1,7 @@
 PORTNAME=	sudachi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.10
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict/:dict
 DISTFILES=	sudachi-dictionary-20220519-core.zip:dict # see ${WRKSRC}/fetch_dictionary.sh
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	compilation fails, see https://github.com/WorksApplications/sudachi.rs/issues/271
 BROKEN_i386=	compilation fails, see https://github.com/WorksApplications/sudachi.rs/issues/271
+BROKEN_powerpc=	compilation fails, see https://github.com/WorksApplications/sudachi.rs/issues/271
 
 USES=		cargo
 

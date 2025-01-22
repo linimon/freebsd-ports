@@ -662,8 +662,6 @@
     SUBDIR += elfkickers
     SUBDIR += elfsh
     SUBDIR += elfutils
-    SUBDIR += elixir-hex
-    SUBDIR += elixir-make
     SUBDIR += elm-format
     SUBDIR += emacs-lsp-booster
     SUBDIR += embb
@@ -4014,7 +4012,6 @@
     SUBDIR += parallel-hashmap
     SUBDIR += parol
     SUBDIR += parol-ls
-    SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
     SUBDIR += patsh
@@ -6307,7 +6304,6 @@
     SUBDIR += radian
     SUBDIR += radicle
     SUBDIR += ragel
-    SUBDIR += raknet
     SUBDIR += random123
     SUBDIR += rang
     SUBDIR += range-v3
